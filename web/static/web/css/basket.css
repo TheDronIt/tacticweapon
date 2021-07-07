@@ -1,0 +1,164 @@
+.basket-block
+{
+	max-width: 1000px;
+	min-height: 400px;
+	
+	margin: 50px auto 80px auto;
+}
+.basket-product-block
+{
+	display: grid;
+	grid-row-gap: 20px;
+}
+.basket-product
+{
+	height: 130px;
+	border-radius: 4px;
+	box-shadow: 1px 1px 8px black;
+	display: grid;
+	grid-template-columns: 250px 1fr 150px 150px;
+}
+.basket-product-image
+{
+	grid-row: 1/3;
+	background-size: cover;
+	background-position: center;
+}
+.basket-product-name
+{
+	grid-row: 1/3;
+	display: grid;
+	grid-template-rows: 1fr auto 1fr;
+}
+.basket-product-value
+{
+	display: grid;
+	grid-template-rows: 1fr 20px 20px;
+	margin-bottom: 10px;
+}
+.basket_product_full_price
+{
+	font-weight: bold;
+	font-size: 22px;
+	text-align: right;
+	padding-right: 20px;
+}
+
+
+.basket-empty-image
+{
+	margin: auto;
+	width: 140px;
+	height: 200px;
+	background-size:cover;
+	background-position: center;	
+}
+.basket-empty-button
+{
+	transition-duration: 0.4s;
+	width: 200px;
+	height: 40px;
+	line-height: 35px;
+	text-align: center;
+	border-radius: 4px;
+	background-color: #434343;
+	margin: 20px auto 50px auto; 
+}
+.basket-empty-button:hover
+{
+	transition-duration: 0.3s;
+	background-color: orange;
+	color: black;
+}
+
+.basket-min-button
+{
+	width: 20px;
+	height: 20px;
+	line-height: 8px;
+}
+.basket-product-dell
+{
+	display: grid;
+	grid-template-columns: 1fr 40px;
+}
+.basket-dell-button
+{
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	position: relative;
+	margin: 10px 0 0 0;
+}
+
+.basket-bottom
+{
+	display: grid;
+	grid-template-columns: 1fr 166px;
+}
+.order-button
+{
+	transition-duration: 0.4s;
+	padding: 8px 18px;
+	background-color: #434343;
+	color: white;
+	border-radius: 5px;
+	font-weight: bold;
+}
+.order-button:hover
+{
+	transition-duration: 0.3s;
+	text-decoration: none;
+	color: black;
+	background-color: orange;
+}
+
+.order-block
+{
+	width: 	600px;
+	margin: 50px auto 0 auto;
+	padding: 50px;
+	border: 2px solid black;
+}
+.order-headline
+{
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	margin: 0 auto 20px auto;
+}
+.input
+{
+	width: 500px;
+
+}
+.input-address
+{
+	display: grid;
+	grid-template-columns: 280px 100px 100px;
+	grid-column-gap: 10px;
+	grid-row-gap: 20px;
+}
+.basket-order-block
+{
+	width: 200px;
+	margin: 20px auto -20px auto;
+}
+.basket-order
+{
+	width: 200px;
+	transition-duration: 0.4s;
+	padding: 8px 18px;
+	background-color: #434343;
+	color: white;
+	border-radius: 5px;
+	font-weight: bold;
+	margin:auto;
+}
+.basket-order:hover
+{
+	transition-duration: 0.3s;
+	text-decoration: none;
+	color: black;
+	background-color: orange;
+}

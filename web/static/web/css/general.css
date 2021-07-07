@@ -1,0 +1,85 @@
+.payment-content
+{
+	margin: 40px auto 80px auto;
+	max-width: 1200px;
+	min-height: 100px;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 450px); 
+	grid-gap: 30px;
+	justify-content: center;
+}
+.way
+{
+	max-width: 1200px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 15px;
+	background-color: #434343;
+	color: white;
+	font-weight: bold;
+
+	margin: 40px auto 10px auto;
+	padding: 0 20px;
+	overflow: hidden;	
+}
+.way > a
+{
+	color: #E7E7E7;
+}
+.way > a:hover
+{
+	color: orange;
+	text-decoration: none;
+}
+.payment-element
+{
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	height: 120px;
+}
+.delivery-element
+{
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	height: 120px;
+}
+.element-logo
+{
+	background-size: cover;
+	background-position: center;
+	height: 100px;
+}
+.element-headline
+{
+	font-weight: bold;
+	padding-top: 20px;
+}
+.element-text
+{
+	margin: 20px 0 0 20px;
+}
+
+
+.about-content
+{
+	margin: 40px auto 80px auto;
+	max-width: 1200px;
+	min-height: 100px;
+
+	display: grid;
+	grid-template-columns: 600px 1fr; 
+	grid-gap: 30px;
+	justify-content: center;
+}
+.delivery-content
+{
+	margin: 40px auto 400px auto;
+	max-width: 1200px;
+	min-height: 800px;
+
+	display: grid;
+	grid-template-columns: 600px; 
+	grid-gap: 30px;
+	justify-content: center;
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>TacticWeapon</title>
+	<link rel="shortcut icon" href="{% static 'web/img/favicon.ico'%}" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/index.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/include.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/bootstrap.css' %}">
+	<script src="{% static 'web/js/jQuery.js' %}"></script>
+	<script src="{% static 'web/js/carousel.js' %}"></script>
+</head>
+<body>
+{% block content %}
+
+{% include 'include/header.html' %}
+
+<div class="slider">
+	<div id="slider-wrap">
+	    <div id="active-slide">
+	        <div id="slider">
+	        	<div class="slide" style="background-image: url({% static '/web/img/slider/slide1.jpg' %});">
+	        		<div class="slide-text">Тактикульные вещи от<br>TacticWapon</div>
+	        	</div>
+	            <div class="slide" style="background-image: url({% static '/web/img/slider/slide2.jpg' %});">
+	            	<div class="slide-text">Вам товар, нам навар</div>
+	        	</div>
+	        	<div class="slide" style="background-image: url({% static '/web/img/slider/slide3.jpg' %});">
+					<div class="slide-text">Покупай!<br>Носи!<br>Побеждай!</div>
+				</div>
+			</div>
+	    </div>
+	</div>
+</div>
+
+<div class="block" id="catalog">
+	<div class="title">Каталог</div>
+	<div class="catalog">
+
+		<div>
+			<a href="/airsoftgun" style="text-decoration: none; color: white">
+				<div class="catalog-box" style="background-image: url({% static '/web/img/catalog/gun.jpg'%});">
+					<div></div>
+					<div style="width: 50px; margin: auto;">
+						<img src="{% static '/web/img/icons/gun.png'%}" height="50">
+					</div>
+					<div class="catalog-name">
+						<div class="catalog-name-back">
+							Страйкбольное оружие
+						</div>
+						
+					</div>
+					<div></div>
+				</div>	
+			</a>
+		</div>
+		<div>
+			<a href="/material" style="text-decoration: none; color: white">
+				<div class="catalog-box" style="background-image: url({% static '/web/img/catalog/bullet.jpg'%});">
+					<div></div>
+					<div style="width: 50px; margin: auto;">
+						<img src="{% static '/web/img/icons/bullet.png'%}" height="50">
+					</div>
+					<div class="catalog-name">
+						<div class="catalog-name-back">
+							Расходные материалы
+						</div>
+						
+					</div>
+					<div></div>
+				</div>	
+			</a>
+		</div>
+		<div>
+			<a href="/equipment" style="text-decoration: none; color: white">
+				<div class="catalog-box" style="background-image: url({% static '/web/img/catalog/clothes.jpg'%});">
+					<div></div>
+					<div style="width: 50px; margin: auto;">
+						<img src="{% static '/web/img/icons/clothes.png'%}" height="50">
+					</div>
+					<div class="catalog-name">
+						<div class="catalog-name-back">
+							Экипировка
+						</div>
+						
+					</div>
+					<div></div>
+				</div>	
+			</a>
+		</div>
+		<div>
+			<a href="/protection" style="text-decoration: none; color: white">
+				<div class="catalog-box" style="background-image: url({% static '/web/img/catalog/protect.jpg'%});">
+					<div></div>
+					<div style="width: 50px; margin: auto;">
+						<img src="{% static '/web/img/icons/protect.png'%}" height="50">
+					</div>
+					<div class="catalog-name">
+						<div class="catalog-name-back">
+							Защита
+						</div>
+						
+					</div>
+					<div></div>
+				</div>	
+			</a>
+		</div>
+		<div>
+			<a href="/electronics" style="text-decoration: none; color: white">
+				<div class="catalog-box" style="background-image: url({% static '/web/img/catalog/electro.jpg'%});">
+					<div></div>
+					<div style="width: 50px; margin: auto;">
+						<img src="{% static '/web/img/icons/electro.png'%}" height="50">
+					</div>
+					<div class="catalog-name">
+						<div class="catalog-name-back">
+							Электроника
+						</div>
+						
+					</div>
+					<div></div>
+				</div>	
+			</a>
+		</div>
+		<div>
+			<a href="/additional" style="text-decoration: none; color: white">
+				<div class="catalog-box" style="background-image: url({% static '/web/img/catalog/other.jpg'%});">
+					<div></div>
+					<div style="width: 50px; margin: auto;">
+						<img src="{% static '/web/img/icons/other.png'%}" height="50">
+					</div>
+					<div class="catalog-name">
+						<div class="catalog-name-back">
+							Дополнительное
+						</div>
+						
+					</div>
+					<div></div>
+				</div>	
+			</a>
+		</div>
+	
+
+	</div>
+</div>
+
+
+<div class="order" style="background-image: url({% static '/web/img/order.jpg'%});">
+	<div class="order-text">
+		<div class="index-text-headline">
+			Как заказать?
+		</div>	
+		Процедура покупки товара в нашем Интернет-магазине очень проста и состоит из нескольких шагов.<br><br>
+
+		<b>1. Оформление заказа</b><br><br>
+
+		После выбора товара нажмите кнопку В корзину — товар добавится в вашу корзину.<br><br>
+
+		Далее, если вы закончили выбирать товар, нажмите кнопку корзина.<br><br>
+
+		На странице ваша корзина будут перечислены все выбранные вами товары.<br><br>
+
+		В поле Количество вы можете изменить количество товара для покупки. После изменения количества товара сумма заказа пере считается автоматически.<br><br>
+
+		Действия, которые можно совершить корзине: удалить товар, изменить колиичество товара.<br><br>
+
+		<b>2. Оформление и подтверждение заказа</b><br><br>
+
+		После ввода необходимой информации о доставке товара (ФИО получателя, адрес доставки, контактные данные, вариант доставки, способ оплаты и т.д) для оформления заказа вам нужно нажать кнопку Оформить заказ.<br><br>
+
+		Копия заказа будет выслана на ваш e-mail, указанный при оформлении заказа.<br><br>
+
+		Внимание! Неправильно указанный номер телефона, неточный или неполный адрес могут привести к дополнительной задержке! Пожалуйста, внимательно проверяйте ваши персональные данные при оформлении заказа.<br><br>
+
+		Через некоторое время (обычно в течение часа) после оформления покупки, с вами свяжется наш менеджер по контактным данным, указанным при оформлении заказа. С менеджером можно будет согласовать точное время и сроки доставки, а также уточнить наличие товара на складе и другие детали заказа.<br><br>
+
+		Возникли трудности с заказом позвоните нам по единому номеру 8 (900) 000-00-00 и мы поможем Вам оформить заказ.<br><br>
+	</div>
+</div>
+
+
+{% include 'include/footer.html' %}
+
+
+{% endblock %}
+</body>
+</html>

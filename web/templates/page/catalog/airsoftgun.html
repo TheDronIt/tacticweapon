@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>Каталог</title>
+	<link rel="shortcut icon" href="{% static 'web/img/favicon.ico'%}" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/catalog.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/include.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/bootstrap.css' %}">
+	<script src="{% static 'web/js/jQuery.js' %}"></script>
+	<script src="{% static 'web/js/carousel.js' %}"></script>
+</head>
+<body>
+{% block content %}
+
+{% include 'include/header.html' %}
+
+<div class="content">
+
+	<div class="catalog-way">
+		<a href="/#catalog">Каталог</a> / <a href="/airsoftgun">Страйкбольное оружие</a>
+	</div>
+
+	<div class="content-filter" style="visibility: hidden;">
+		
+	</div>
+	<div class="content-product">
+	{% for Product in Product %}
+		<div>
+			<a href="/airsoftgun/{{Product.id}}" style="text-decoration: none; color: black;">
+				<div class="product-card">
+					<div class="product-card-image" style="background-image: url({{Product.Image.url}})">
+					</div>
+					<div class="product-card-name">
+						{{Product.Name}}
+					</div>
+					<div class="product-card-vendor">
+						Производитель: {{Product.Vendor}}
+					</div>
+					<div class="product-card-price">
+						{{Product.Price}} ₽
+					</div>
+						{% if Product.Value > 0 %}
+							<div class="product-card-button">
+								<form method="POST">
+									{% csrf_token %}
+									<input type="hidden" name="id" value="{{Product.id}}" />
+									
+									{% if Product.id in is_product_in_busket %}
+										<input class="product-card-button2" name="button" type="submit" value="В корзине" />
+										{% else %}
+										<input class="product-card-button2" name="button" type="submit" value="Добавить в коризну" />
+									{% endif %}
+
+								</form>
+							</div>
+						{% endif %}
+						{% if Product.Value == 0 %}
+							<div class="product-card-button none">
+								нет в наличии
+							</div>
+						{% endif %}
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+	</div>
+</div>
+
+
+{% include 'include/footer.html' %}
+
+{% endblock %}
+</body>
+</html>

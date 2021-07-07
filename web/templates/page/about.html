@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>О нас</title>
+	<link rel="shortcut icon" href="{% static 'web/img/favicon.ico'%}" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/general.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/include.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/bootstrap.css' %}">
+	<script src="{% static 'web/js/jQuery.js' %}"></script>
+	<script src="{% static 'web/js/carousel.js' %}"></script>
+</head>
+<body>
+{% block content %}
+
+{% include 'include/header.html' %}
+
+
+<div class="way">
+	<a href="/">Главная</a> / <a href="/about">О нас</a>
+</div>
+<div class="about-content">
+	<div>
+		<img src="{% static 'web/img/our-shop.jpg' %}" width="600px">
+	</div>
+	<div>
+		«<b>TacticWeapon</b>» - это молодая амбициозная компания на рынке военного обмундирования. Наша основная деятельность направленна на реализацию военного обмундирования и товаров для активного отдыха. Для реализации задействована оптовая и розничная сеть.
+		<br><br><br>
+		<b>Основные цели, которые ставить перед собой компания «TacticWeapon» это:</b><br><br>
+		<ul style="margin-left: 40px;">
+			<li>долгосрочные отношения с клиентами.</li>
+			<li>поддержание широкого ассортимента продукта с разным ценовым сегментом.</li>
+		</ul>
+		<br><br>
+		<b>Что отличает «Миротворец» от других схожих компаний?</b><br><br>
+		<ul style="margin-left: 40px;">
+		<li>В отличие от других у нас представлен товар, который имеет узкую специфичную направленность: в ассортименте представлено большое количество обмундирование и экипировки.</li>
+		<li>Сотрудничество с крупными компаниями производящими одежду и экипировку, позволяет не сомневаться в наивысшем качестве товара.</li>
+		<li>Сравнительно гибкий ценовой сегмент. В нашей сети можно найти товары разной ценовой категории.
+		Осуществляем доставку по всей России.</li>
+		</ul>
+	</div>
+</div>
+
+{% include 'include/footer.html' %}
+
+{% endblock %}
+</body>
+</html>

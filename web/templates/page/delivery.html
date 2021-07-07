@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>Оплата</title>
+	<link rel="shortcut icon" href="{% static 'web/img/favicon.ico'%}" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/general.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/include.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/bootstrap.css' %}">
+	<script src="{% static 'web/js/jQuery.js' %}"></script>
+	<script src="{% static 'web/js/carousel.js' %}"></script>
+</head>
+<body>
+{% block content %}
+
+{% include 'include/header.html' %}
+
+
+<div class="way">
+	<a href="/">Главная</a> / <a href="/payment">Доставка</a>
+</div>
+<div class="delivery-content">
+	<div class="delivery-element">
+		<div class="element-logo" style="background-image: url({% static 'web/img/icons/samovivoz.png' %})"></div>
+		<div class="element-headline">
+			​Самовывоз из магазина в г. Хабаровск - бесплатно!
+		</div>
+		<div class="element-text" style="grid-column: 1/3;">
+			Адрес магазина: г. Хабаровск, ул. Ленина, 53<br>
+			Магазин работает ежедневно с 10:00 до 19:00.<br>
+			Стоимость доставки по городу –  от 150 рублей!<br>
+			При сумме заказа свыше 10000 рублей - Бесплатно!<br>
+		</div>
+	</div>
+	<div class="delivery-element">
+		<div class="element-logo" style="background-image: url({% static 'web/img/icons/porossii.png' %})"></div>
+		<div class="element-headline">
+			​Доставка по России
+		</div>
+		<div class="element-text" style="grid-column: 1/3;">
+			Доставка по России<br>
+			Доставка осуществляется курьерской компанией DPD,CDEK<br>
+			Во многих городах есть пункты выдачи и возможность оплаты курьеру при получении заказа.<br>
+			Срок доставки курьерами в регионы - от 2 дней.<br>
+		</div>
+	</div>
+	<div class="delivery-element">
+		<div class="element-logo" style="background-image: url({% static 'web/img/icons/procedura.png' %})"></div>
+		<div class="element-headline">
+			​Процедура доставки после оплаты:
+		</div>
+		<div class="element-text" style="grid-column: 1/3;">
+			После поступления денежных средств на счет интернет-магазина, в течение 3 рабочих дней производится отгрузка заказа;<br><br>
+
+			Сроки доставки груза напрямую зависят от условий предоставляемых транспортной компаний и могут сильно варьироваться, особенно в преддверии больших праздников. Поэтому если хотите заказать товар в это время, делать это лучше заранее.<br><br>
+
+			Стоимость за услуги ТК зависят от выбранного Вами способа доставки, и определяется тарифами транспортных компаний, DPD,CDEK<br><br>
+
+			После получения товара, внимательно осмотрите его на предмет брака. Если Вы разочарованны качеством или на товаре обнаружили дефект, Вам необходимо связаться с нами для осуществления процедуры обмена или возврата.<br><br>
+
+			Если товар, который заказали Вам не подошел,обменять или вернуть товар Вы можете в течении 14 дней со дня получения. Необходимо связаться с нами, и мы вернем деньги или обменяем товар, если товар соответствует товарному виду (нет признаков носки и использования)<br><br>
+		</div>
+	</div>
+</div>
+
+{% include 'include/footer.html' %}
+
+{% endblock %}
+</body>
+</html>

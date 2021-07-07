@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>Корзина</title>
+	<link rel="shortcut icon" href="{% static 'web/img/favicon.ico'%}" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/basket.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/include.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/bootstrap.css' %}">
+	<script src="{% static 'web/js/jQuery.js' %}"></script>
+	<script src="{% static 'web/js/carousel.js' %}"></script>
+</head>
+  <body>
+  	{% block content %}
+	{% include 'include/header.html' %}
+
+
+	{% if not basket_product %}
+		<div style="font-size: 26px; font-weight: bold; margin: 50px auto 20px auto; text-align: center;">
+			Упс. Ваша корзина пуста.
+		</div>
+		<div class="basket-empty-image" style="background-image: url({% static '/web/img/basket-empty.jpg' %});">
+		</div>
+		
+		<a href="/#catalog" style="text-decoration: none; font-weight: bold; font-size: 20px; color: white; ">
+			<div class="basket-empty-button">
+				Перейти в каталог
+			</div>
+		</a>
+		
+	{% endif %}
+
+
+	{% if basket_product %}
+
+	<div class="basket-block">
+		<div class="basket-product-block">
+			<b style="font-size: 30px;">Ваша корзина</b>
+			{% for product in basket_product %}
+			<form method="post">
+				{% csrf_token %}
+				<div class="basket-product">
+					<div class="basket-product-image" style="background-image: url({{product.image}});">
+					</div>
+					<div class="basket-product-name">
+						<div></div>
+						<div>
+							<a href="{{product.link}}" style="text-decoration: none; color: black;">{{product.name}}</a>
+						</div>
+						<div></div>
+					</div>
+					<div class="basket-product-value">
+						<div></div>
+						<div style="margin: auto">
+							Количество:
+						</div>
+						<div style="margin:auto">
+							<input type="hidden" name="id" value="{{product.id}}" />
+							<input type="hidden" name="pr_type" value="{{product.pr_type}}" />
+	     					<input class="basket-min-button" name="button" type="submit" value="-" />
+	     					{{product.value}}
+	     					<input class="basket-min-button" name="button" type="submit" value="+" />
+     					</div>	
+					</div>
+					<div class="basket-product-dell">
+						<div></div>		
+						<div>
+							<input class="basket-dell-button" name="button" type="submit" value="✖" />
+						</div>
+					</div>
+					<div>
+						1 шт. = {{product.price}} ₽
+					</div>
+					<div class="basket_product_full_price">
+						{{product.full_product_price}} ₽
+					</div>
+				</div>
+			</form>
+			{% endfor %}
+			<div class="basket-bottom">
+				<div>
+					<a style="font-size: 22px;">Сумма заказа: <b>{{basket_price}} ₽	</b></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="order-block">
+			<form method="POST">
+				{% csrf_token %}
+				<div class="order-headline">
+					Оформление заказа
+				</div>
+				<a style="color: red;">*</a> ФИО<br>	
+				<input name="FIO" placeholder="ФИО" type="text" size="100" class="input" required><br><br>
+
+				<a style="color: red;">*</a> Номер телефона<br>	
+				<input name="Phone" placeholder="Номер телефона" type="text" size="100" class="input" required><br><br>
+
+				<a style="color: red;">*</a> Email<br>	
+				<input name="Email" placeholder="Email" type="text" size="100" class="input" required><br><br>
+
+				Способ доставки<br>
+				<input type="radio" id="pickup" name="Delivery_type" value="1" checked>
+    			<label for="pickup"  style="margin: 0;">Самовывоз</label><br>
+   				<input type="radio" id="delivery" name="Delivery_type" value="2">
+    			<label for="delivery">Доставка</label>
+    			<br>
+
+				Адрес доставки<br>
+				<div class="input-address">
+					<div>
+						<input name="street" placeholder="Улица" type="text" size="10" style="width: 100%;">
+					</div>
+					<dir>
+						<input name="house" placeholder="Дом" type="text" size="5" style="width: 100%;">
+					</dir>
+					<div>
+						<input name="flat" placeholder="Кв." type="text" size="5" style="width: 100%;">
+					</div>
+					<div style="grid-column: 1/4;">
+						<input name="index" placeholder="Почтовый индекс" type="text" size="100" style="width: 100%;"><br><br>
+					</div>
+				</div>	
+
+				Комментарий к заказу<br>	
+				<textarea name="Comment" cols="40" rows="5" class="input"></textarea>
+				<br>
+				<div class="basket-order-block">
+					<input class="basket-order" name="button" type="submit" value="Оформить" />
+				</div>
+			</form>
+		</div>
+		
+	</div>
+	{% endif %}
+	
+
+	{% include 'include/footer.html' %}
+	{% endblock %}
+</body>
+  </body>
+</html>

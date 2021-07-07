@@ -1,0 +1,68 @@
+{% load static %}
+<div class="header">
+
+	<div class="header-logo">Tactic<br>Weapon</div>
+	<div class="header-info">
+		<div style="padding: 0 40px 0 0;">Город:<br>Хабаровск</div>
+		<div style="visibility: hidden;">
+			<input type="search" name="search" class="header-search">
+			<img src="{% static '/web/img/icons/search.png'%}" height="30">
+		</div>
+		<div style="padding-right: 40px; padding-left: 20px">8 (900) 000-00-00</div>
+		<div>
+			<img src="{% static '/web/img/icons/basket.png'%}" height="30">
+			<a href="/basket" class="basket" style="color: white;">{{basket_price}} ₽</a>
+		</div>
+	</div>
+	<div class="header-menu">
+		<div>
+			<a href="/" style="text-decoration: none; color: white;">
+				<div class="header-menu-text">Главная</div>
+
+			</a>
+		</div>
+		<div>
+			<a href="/#catalog" style="text-decoration: none; color: white;">
+				<div class="header-menu-text">Каталог</div>
+
+			</a>
+		</div>
+		<!--<div>
+			<a href="#" style="text-decoration: none; color: white;">
+				<div class="header-menu-text">Акции</div>
+
+			</a>
+		</div>
+		<div>
+			<a href="#" style="text-decoration: none; color: white;">
+				<div class="header-menu-text">Новости</div>
+
+			</a>
+		</div> -->
+		<div>
+			<a href="/payment" style="text-decoration: none; color: white;">
+				<div class="header-menu-text">Оплата</div>
+
+			</a>
+		</div>
+		<div>
+			<a href="/delivery" style="text-decoration: none; color: white;">
+				<div class="header-menu-text">Доставка</div>
+
+			</a>
+		</div>
+		<div>
+			<a href="/about" style="text-decoration: none; color: white;">
+				<div class="header-menu-text">О нас</div>
+
+			</a>
+		</div>
+		<!--<div>
+			<a href="#" style="text-decoration: none; color: white;">
+				<div class="header-menu-text">Контакты</div>
+
+			</a>
+		</div>-->
+
+	</div>
+</div> 
